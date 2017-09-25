@@ -350,3 +350,22 @@
 {addJsDefL name=toBeDetermined}{l s='To be determined' mod='blockcart' js=1}{/addJsDefL}
 {/strip}
 <!-- /MODULE Block cart -->
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var google_conversion_id = 9999;
+	var google_conversion_language = "en";
+	var google_conversion_format = "3";
+	var google_conversion_color = "ffffff";
+	var google_conversion_label = "abcdef";
+	var google_conversion_value = "{$cart->getOrderTotal(false, Cart::BOTH_WITHOUT_SHIPPING)}";
+	var google_conversion_currency = "EUR";
+	var google_remarketing_only = false;
+	/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+	<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/{$cart->getOrderTotal(false, Cart::BOTH_WITHOUT_SHIPPING)}/?value={$cart->getOrderTotal(false, Cart::BOTH_WITHOUT_SHIPPING)}&amp;currency_code=EUR&amp;label=xxx&amp;guid=ON&amp;script=0"/>
+	</div>
+</noscript>
