@@ -47,25 +47,6 @@ class DomalainArpa3 extends Module
         $this->description = $this->l('Add possibility to notify stock');
     }
 
-    public function getEmail()
-    {
-        return '
-		<form action="' . Tools::safeOutput($_SERVER['REQUEST_URI']) . '" method="post">
-			<fieldset>
-				<legend><img src="' . $this->_path . 'logo.gif" alt="" title="" />' . $this->l('Settings') . '</legend>
-				<label>' . $this->l('Ajax cart') . '</label>
-				<div class="margin-form">
-					<input type="radio" name="cart_ajax" id="ajax_on" value="1" ' . (Tools::getValue('cart_ajax', Configuration::get('PS_BLOCK_CART_AJAX')) ? 'checked="checked" ' : '') . '/>
-					<label class="t" for="ajax_on"> <img src="../img/admin/enabled.gif" alt="' . $this->l('Enabled') . '" title="' . $this->l('Enabled') . '" /></label>
-					<input type="radio" name="cart_ajax" id="ajax_off" value="0" ' . (!Tools::getValue('cart_ajax', Configuration::get('PS_BLOCK_CART_AJAX')) ? 'checked="checked" ' : '') . '/>
-					<label class="t" for="ajax_off"> <img src="../img/admin/disabled.gif" alt="' . $this->l('Disabled') . '" title="' . $this->l('Disabled') . '" /></label>
-					<p class="clear">' . $this->l('Activate AJAX mode for cart (compatible with the default theme)') . '</p>
-				</div>
-				<center><input type="submit" name="submitBlockCart" value="' . $this->l('Save') . '" class="button" /></center>
-			</fieldset>
-		</form>';
-    }
-
     public function install()
     {
         if (
