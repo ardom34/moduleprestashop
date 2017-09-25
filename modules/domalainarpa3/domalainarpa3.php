@@ -72,8 +72,8 @@ class DomalainArpa3 extends Module
         $lang = Language::getIsoById((int)$id_lang);
 
         if ($params['product']['active'] == 1) {
-            if (file_exists(dirname(__FILE__) . '/mails/' . $lang . '/productoutofstock.txt') AND file_exists(dirname(__FILE__) . '/mails/' . $lang . '/productoutofstock.html'))
-                Mail::Send((int)Configuration::get('PS_LANG_DEFAULT'), 'productoutofstock', Mail::l('Product out of stock', (int)Configuration::get('PS_LANG_DEFAULT')), $mailParams, explode(self::__MA_MAIL_DELIMITOR__, $this->_merchant_mails), NULL, strval(Configuration::get('PS_SHOP_EMAIL')), strval(Configuration::get('PS_SHOP_NAME')), NULL, NULL, dirname(__FILE__) . '/mails/');
+            if (file_exists(dirname(__FILE__) . '/mails/' . $lang . '/productcoverage.txt') AND file_exists(dirname(__FILE__) . '/mails/' . $lang . '/productcoverage.html'))
+                Mail::Send((int)Configuration::get('PS_LANG_DEFAULT'), 'productcoverage', Mail::l('Product out of stock', (int)Configuration::get('PS_LANG_DEFAULT')), $mailParams, explode(self::__MA_MAIL_DELIMITOR__, $this->_merchant_mails), NULL, strval(Configuration::get('PS_SHOP_EMAIL')), strval(Configuration::get('PS_SHOP_NAME')), NULL, NULL, dirname(__FILE__) . '/mails/');
         }
     }
 }
